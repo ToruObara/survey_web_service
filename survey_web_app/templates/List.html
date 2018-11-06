@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block body%}
+  <a href="/creation">アンケート作成</a>
+  <a href="/delete">アンケート全件削除</a>
+  <hr>
+  <h2>一覧</h2>
+  <hr>
+  <table class="borderd">
+    <thead>
+      <th>氏名</th>
+      <th>年齢</th>
+      <th>好きな映画とその理由</th>
+      <th>好きなお店とその理由</th>
+      <th>作成日時</th>
+    </thead>
+    <tbody>
+    {% for o in object_list %}
+      <tr>
+        <td>{{ o.name }}</td>
+        <td>{{ o.age }}</td>
+        <td>{{ o.answer_1 }}</td>
+        <td>{{ o.answer_2 }}</td>
+        <td>{{ o.creation_dt }}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
